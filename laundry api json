@@ -1,0 +1,110 @@
+{
+    "name": "DGT-BESTATLAUNDRY-VM-SERVER",
+    "id": "/subscriptions/1caf0a20-1fff-43c3-a649-d83fbd8da35a/resourceGroups/DGT-BESTATLAUNDRY-RG/providers/Microsoft.Compute/virtualMachines/DGT-BESTATLAUNDRY-VM-SERVER",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "uksouth",
+    "tags": {
+        "NAME": "BESTATLAUNDRY"
+    },
+    "identity": {
+        "type": "SystemAssigned",
+        "principalId": "144775a9-d4c2-4873-b478-f9b0d58f9d5c",
+        "tenantId": "e724c5b1-f638-41d5-ac5c-9e6c33cacab5"
+    },
+    "properties": {
+        "hardwareProfile": {
+            "vmSize": "Standard_B2ms"
+        },
+        "provisioningState": "Succeeded",
+        "vmId": "0a1907f7-159e-4a01-8911-652b4cd4ebb9",
+        "additionalCapabilities": {
+            "hibernationEnabled": false
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "canonical",
+                "offer": "0001-com-ubuntu-server-jammy",
+                "sku": "22_04-lts-gen2",
+                "version": "latest",
+                "exactVersion": "22.04.202407010"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "DGT-BESTATLAUNDRY-VM-SERVER_OsDisk_1_78a3540b890c41318ba713588b8e676d",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "StandardSSD_LRS",
+                    "id": "/subscriptions/1caf0a20-1fff-43c3-a649-d83fbd8da35a/resourceGroups/DGT-BESTATLAUNDRY-RG/providers/Microsoft.Compute/disks/DGT-BESTATLAUNDRY-VM-SERVER_OsDisk_1_78a3540b890c41318ba713588b8e676d"
+                },
+                "deleteOption": "Delete",
+                "diskSizeGB": 100
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "DGT-BESTATLAUNDRY-VM-SERVER",
+            "adminUsername": "ubuntu",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": true,
+                "ssh": {
+                    "publicKeys": [
+                        {
+                            "path": "/home/ubuntu/.ssh/authorized_keys",
+                            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDaICvjbDjo/8gfbyQlCF5wf+Sy3npFaT2QdR/Rm86fEn4I8AvDOF/UiF+ofBShiS0rE7J0Mdw0TQp/JtEhVl1bR3/GFHHnAiMIZbhhi4E7rHrZXow6NOYshX10BMHO1Lo+f6nQ1609+2cbizSYZT7WfFoe52IGpg2stVm7mbnyt23ACWyqSW4DZaYz+IWlt26sHGAmzatGw07VzKQZEzWIWj0oc87O62CY0boylmX3h75MnW4nSH5w0Bag5lttWw2LkGC7INQrbnz7dq/4Uo6P1RGvEHJnBrlh3+TnOGOL1YcrCZZIB6jZ5d1yWyoGyydMvIviJ/hEUv33SS6iV0O8SR8/VpiPODTakSi/Ovjm7qlGAuoMHd4XvsI2vLyzhLNNVS2Akv/XgeM3Al/Zx7IgSd6QH/rcj+wrCau3pVbE3w+STiu258yOHt9fBxdbvHaq6Y0ZmUaVoRfbeC5dWVpW+XcyEw0I5mlHzUrU+af8ZPKS2TgbEpm88Mrum4zCOD0= generated-by-azure"
+                        }
+                    ]
+                },
+                "provisionVMAgent": true,
+                "patchSettings": {
+                    "patchMode": "AutomaticByPlatform",
+                    "assessmentMode": "ImageDefault"
+                }
+            },
+            "secrets": [],
+            "allowExtensionOperations": true,
+            "requireGuestProvisionSignal": true
+        },
+        "securityProfile": {
+            "uefiSettings": {
+                "secureBootEnabled": true,
+                "vTpmEnabled": true
+            },
+            "securityType": "TrustedLaunch"
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/1caf0a20-1fff-43c3-a649-d83fbd8da35a/resourceGroups/DGT-BESTATLAUNDRY-RG/providers/Microsoft.Network/networkInterfaces/dgt-bestatlaundry-vm-server347_z1",
+                    "properties": {
+                        "deleteOption": "Detach"
+                    }
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        }
+    },
+    "zones": [
+        "1"
+    ],
+    "resources": [
+        {
+            "name": "AADSSHLoginForLinux",
+            "id": "/subscriptions/1caf0a20-1fff-43c3-a649-d83fbd8da35a/resourceGroups/DGT-BESTATLAUNDRY-RG/providers/Microsoft.Compute/virtualMachines/DGT-BESTATLAUNDRY-VM-SERVER/extensions/AADSSHLoginForLinux",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "uksouth",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.Azure.ActiveDirectory",
+                "type": "AADSSHLoginForLinux",
+                "typeHandlerVersion": "1.0"
+            }
+        }
+    ],
+    "apiVersion": "2021-03-01"
+}
